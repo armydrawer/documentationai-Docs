@@ -1,0 +1,118 @@
+---
+title: Introduction to Aleksandr Kislitsyn Documentation
+description: Discover the default documentation space designed for organizing and managing all your project documentation efficiently.
+---
+
+## Overview
+
+Welcome to Aleksandr Kislitsyn's documentation platform. You get a centralized space to organize, manage, and share all your project documentation. Build structured guides, embed code examples, and customize branding with ease using intuitive MDX components.
+
+This default space helps you create professional docs without leaving your workflow. Start with pre-built components like Cards, Steps, and Tabs to showcase features and guides quickly.
+
+## Key Benefits
+
+Organize your project docs efficiently with these core advantages:
+
+<Columns cols={3}>
+  <Card title="Centralized Management" icon="database" href="#quick-navigation">
+    Keep all guides, APIs, and changelogs in one searchable space.
+  </Card>
+  <Card title="Rich Components" icon="components" href="#quick-start">
+    Use `<Columns>`, `<Steps>`, and `<Callout>` for engaging content.
+  </Card>
+  <Card title="Custom Branding" icon="palette" href="#customize-brand">
+    Apply your brand color `#3B82F6` across themes and elements.
+  </Card>
+</Columns>
+
+## Quick Start
+
+Get up and running in minutes:
+
+<Steps>
+  <Step title="Create Your First Page" icon="file-plus">
+    Add a new `.mdx` file to your docs directory.
+
+    ```
+    touch docs/quickstart.mdx
+    ```
+  </Step>
+  <Step title="Add Frontmatter" icon="edit-3">
+    Start every page with YAML frontmatter for title and description.
+  </Step>
+  <Step title="Use Components" icon="code">
+    Insert JSX components like `<Card>` for rich layouts.
+  </Step>
+  <Step title="Preview Changes" icon="eye">
+    Run your dev server to see live updates.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Begin with the `/quickstart` page for detailed setup instructions.
+</Callout>
+
+## Quick Navigation
+
+Access essential sections fast:
+
+<Columns cols={2}>
+  <Card title="Guides & Tutorials" icon="book-open" href="/quickstart">
+    Step-by-step instructions for common tasks.
+  </Card>
+  <Card title="API Reference" icon="api" href="/authentication">
+    Authentication and endpoint details.
+  </Card>
+  <Card title="Changelog" icon="git-branch" href="/changelog">
+    Track updates and releases.
+  </Card>
+  <Card title="FAQ" icon="help-circle" href="/faq">
+    Common questions and troubleshooting.
+  </Card>
+</Columns>
+
+## Customize Your Brand
+
+Tailor the documentation to match your identity, starting with the brand color `#3B82F6`.
+
+<Tabs>
+  <Tab title="Theme Config" icon="settings">
+    Update your theme file:
+
+    <CodeGroup tabs="JavaScript,TypeScript">
+    ```javascript
+    // theme.config.js
+    export default {
+      colors: {
+        primary: '#3B82F6'
+      }
+    };
+    ```
+    ```typescript
+    // theme.config.ts
+    const config = {
+      colors: {
+        primary: '#3B82F6'
+      }
+    } as const;
+    export default config;
+    ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="CSS Variables" icon="code">
+    Override styles globally:
+
+    ```css
+    :root {
+      --brand-color: #3B82F6;
+      --brand-hover: #2563EB;
+    }
+    ```
+  </Tab>
+</Tabs>
+
+<Callout kind="info">
+  Preview changes in your dev environment. Test across light and dark modes for consistency.
+</Callout>
+
+Ready to dive deeper? Explore the quickstart guide next or customize further with advanced components.

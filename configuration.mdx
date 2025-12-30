@@ -1,0 +1,141 @@
+---
+title: Settings and Customization
+description: Configure your documentation space to match your project's needs and preferences.
+---
+
+## Overview
+
+Customize your Aleksandr Kislitsyn documentation space to align with your brand and workflow. Adjust themes, manage user permissions, set up backups, and integrate external tools. Start with the dashboard at `https://dashboard.example.com/settings` to access all options.
+
+<Columns cols={2}>
+  <Card title="Theme Settings" icon="palette" href="#brand-color">
+    Set brand colors and themes.
+  </Card>
+  <Card title="User Permissions" icon="users" href="#user-access">
+    Control access levels.
+  </Card>
+  <Card title="Backup Config" icon="database" href="#backup">
+    Automate exports.
+  </Card>
+  <Card title="Integrations" icon="plug" href="#integrations">
+    Connect tools.
+  </Card>
+</Columns>
+
+## Brand Color and Theme Adjustments
+
+Set your brand color to `#3B82F6` for a professional blue theme. Use the UI or API to apply changes.
+
+<Steps>
+  <Step title="Access Settings" icon="settings">
+    Navigate to `https://dashboard.example.com/settings/theme`.
+  </Step>
+  <Step title="Update Color" icon="palette">
+    Enter `#3B82F6` in the brand color field and save.
+  </Step>
+  <Step title="Preview Changes" icon="eye">
+    View live preview and publish.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="JSON,YAML">
+  ```json
+  {
+    "theme": {
+      "brandColor": "#3B82F6",
+      "mode": "light"
+    }
+  }
+  ```
+  ```yaml
+  theme:
+    brandColor: "#3B82F6"
+    mode: light
+  ```
+</CodeGroup>
+
+<Callout kind="tip">
+  Changes apply site-wide within `<1min`.
+</Callout>
+
+## User Access and Permissions Setup
+
+Define roles like Admin, Editor, and Viewer. Assign via dashboard or API.
+
+| Role     | Read | Write | Admin |
+|----------|------|-------|-------|
+| Admin    | ✅   | ✅    | ✅    |
+| Editor   | ✅   | ✅    | ❌    |
+| Viewer   | ✅   | ❌    | ❌    |
+
+<ParamField path="user.role" param-type="string" required="true">
+  Role assignment: `admin`, `editor`, or `viewer`.
+</ParamField>
+
+<ParamField header="X-API-Key" param-type="string" required="true">
+  Use `YOUR_API_KEY` for permission updates.
+</ParamField>
+
+## Backup and Export Configurations
+
+Schedule automated backups to prevent data loss.
+
+<Tabs>
+  <Tab title="Daily Backup" icon="calendar">
+    ```json
+    {
+      "backup": {
+        "schedule": "0 2 * * *",
+        "format": "zip",
+        "destination": "s3://your-bucket/backups"
+      }
+    }
+    ```
+  </Tab>
+  <Tab title="Manual Export" icon="download">
+    <Steps>
+      <Step title="Select Pages">
+        Choose docs to export.
+      </Step>
+      <Step title="Generate">
+        Click Export MDX bundle.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Integration with External Tools
+
+Connect GitHub, Slack, or webhooks.
+
+<Expandable title="Advanced GitHub Sync" default-open="false">
+
+Configure webhook at `https://your-webhook-url.com/webhook`.
+
+```javascript
+fetch('https://api.example.com/integrations/github', {
+  method: 'POST',
+  headers: { 'Authorization': 'Bearer YOUR_TOKEN' },
+  body: JSON.stringify({
+    repo: 'your-org/docs',
+    branch: 'main'
+  })
+});
+```
+
+</Expandable>
+
+<Callout kind="alert">
+  Test integrations in staging first.
+</Callout>
+
+## Troubleshooting
+
+<ExpandableGroup>
+  <Expandable title="Theme Not Applying" default-open="true">
+    Clear cache and verify `{brandColor}` syntax.
+  </Expandable>
+  <Expandable title="Permission Errors">
+    Check `user.role` matches API headers.
+  </Expandable>
+</ExpandableGroup>

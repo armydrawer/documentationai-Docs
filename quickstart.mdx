@@ -1,0 +1,126 @@
+---
+title: Quickstart Guide
+description: Get up and running with your documentation space by setting up an account and creating your first project.
+---
+
+## Prerequisites
+
+Before starting, ensure you have:
+
+- A modern web browser like Chrome or Firefox
+- An email address for account verification
+- Basic familiarity with markdown for page editing
+
+<Callout kind="info">
+
+Prepare your project details, such as the name and description, to streamline setup.
+
+</Callout>
+
+## Sign Up for an Account
+
+Follow these steps to create your Aleksandr Kislitsyn account.
+
+<Steps>
+  <Step title="Visit the Signup Page" icon="globe">
+    Navigate to `https://dashboard.example.com/signup`.
+  </Step>
+  <Step title="Enter Your Details">
+    Provide your email, create a strong password, and complete the CAPTCHA.
+  </Step>
+  <Step title="Verify Email">
+    Check your inbox for the verification link and click it to activate your account.
+  </Step>
+  <Step title="Log In">
+    Return to the dashboard at `https://dashboard.example.com` and sign in.
+  </Step>
+</Steps>
+
+## Create a New Documentation Space
+
+Once logged in, set up your first space.
+
+<Steps>
+  <Step title="Click New Space" icon="plus">
+    From the dashboard, select the `New Documentation Space` button.
+  </Step>
+  <Step title="Configure Space">
+    Enter a name like "My Project Docs", add a description, and choose `#3B82F6` as your brand color.
+  </Step>
+  <Step title="Save and Publish">
+    Click `Create Space` to generate your documentation site.
+  </Step>
+</Steps>
+
+## Add and Edit Your First Page
+
+Create content using the intuitive editor.
+
+<Tabs>
+  <Tab title="Visual Editor" icon="edit-3">
+    Select `New Page` from the space menu. Use the WYSIWYG editor to add headings, lists, and images. Preview changes in real-time.
+  </Tab>
+  <Tab title="Markdown Editor" icon="code">
+    Switch to markdown mode for advanced formatting.
+
+````markdown
+# Welcome Page
+
+## Overview
+
+This is your first documentation page.
+
+- Feature 1
+- Feature 2
+````
+
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="Default Page,Custom MDX">
+```yaml
+---
+title: Welcome
+description: Introduction to your docs.
+---
+## Quickstart Complete
+```
+```mdx
+<Callout kind="success">
+Setup finished!
+</Callout>
+```
+</CodeGroup>
+
+## Basic Interface Tour
+
+Explore key areas of the dashboard.
+
+<Columns cols={3}>
+  <Card title="Editor Panel" icon="edit-3" href="#">
+    Write and preview pages with live rendering.
+  </Card>
+  <Card title="Navigation Tree" icon="layout" href="#">
+    Organize pages in a hierarchical structure.
+  </Card>
+  <Card title="Publish Settings" icon="upload-cloud" href="#">
+    Deploy changes with one click.
+  </Card>
+</Columns>
+
+## Next Steps
+
+<Callout kind="tip">
+
+Customize your space further by exploring authentication and advanced features.
+
+</Callout>
+
+<Columns cols={2}>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your documentation.
+  </Card>
+  <Card title="Introduction" icon="book-open" href="/introduction">
+    Learn core concepts.
+  </Card>
+</Columns>

@@ -1,0 +1,138 @@
+---
+title: Changelog
+description: Review the latest updates, new features, and improvements to the documentation platform.
+---
+
+## Overview
+
+Stay informed about the latest releases of Aleksandr Kislitsyn's documentation platform. You receive new features, performance enhancements, and bug fixes regularly. Check this page for migration notes and detailed changelogs.
+
+<Callout kind="info">
+  Subscribe to our RSS feed or GitHub notifications to get update alerts directly.
+</Callout>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added support for custom brand colors like `#3B82F6` for your docs theme
+- Introduced `<Columns>` component with up to 5 columns for better layouts
+- New `<Video>` component for embedding YouTube and self-hosted videos
+
+## Improvements
+
+- Enhanced MDX parsing to handle nested code blocks more reliably
+- Optimized rendering speed for pages with multiple `<Tabs>` and `<Steps>`
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["bugfix", "feature"]}>
+
+## New Features
+
+- Added `<ParamField>` and `<ResponseField>` for API documentation
+- Support for Mermaid diagrams via code blocks (no JSX component needed)
+
+## Bug Fixes
+
+- Fixed parsing errors from unescaped `{` and `}` in prose text
+- Resolved heading hierarchy issues when skipping from H2 to H4
+- Corrected attribute quoting in JSX components (double quotes only)
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## New Features
+
+- Core MDX components: `<Callout>`, `<Card>`, `<Steps>`, `<Tabs>`, and more
+- YAML frontmatter validation with no blank lines allowed
+- Built-in escaping for special characters like `<`, `>`, `{`, `}`
+
+## Breaking Changes
+
+- Removed legacy `<Mermaid>` component—use code blocks only
+- Enforced PascalCase for all component names
+
+</Update>
+
+## Migration Guide
+
+Follow these steps to update your documentation platform to the latest version. Test changes in a staging environment first.
+
+<Steps>
+  <Step title="Backup Your Docs" icon="database">
+
+    Create a full backup of your MDX files and configuration.
+
+  </Step>
+  <Step title="Update Package" icon="download">
+
+````bash
+npm install aleksandr-docs@latest
+```
+````
+
+    Or use Yarn:
+
+````bash
+yarn add aleksandr-docs@latest
+```
+````
+
+  </Step>
+  <Step title="Review Breaking Changes" icon="alert-triangle">
+
+    Scan your pages for deprecated syntax like `<Mermaid>` components. Replace with proper code blocks.
+
+    ```mermaid
+    graph TD
+        A[Docs] --> B[Update]
+        B --> C[Deploy]
+    ```
+
+  </Step>
+  <Step title="Test Parsing" icon="check-circle">
+
+    Run your build command and verify no parsing errors occur.
+
+  </Step>
+</Steps>
+
+<CodeGroup tabs="npm,yarn,pnpm">
+````bash
+npm install aleksandr-docs@latest
+````
+````bash
+yarn add aleksandr-docs@latest
+````
+````bash
+pnpm add aleksandr-docs@latest
+````
+</CodeGroup>
+
+<Callout kind="tip">
+  After updating, customize your brand color in `config.js`: `{ brandColor: "#3B82F6" }`.
+</Callout>
+
+## Next Steps
+
+<Columns cols={3}>
+  <Card title="Introduction" icon="book-open" href="/introduction">
+    Get started with the platform basics.
+  </Card>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Set up your first documentation site.
+  </Card>
+  <Card title="Components" icon="code" href="/components">
+    Explore all available MDX components.
+  </Card>
+</Columns>
+
+<Expandable title="Advanced Migration Notes" default-open="false">
+
+If you encounter parsing issues, ensure all `{` and `}` are wrapped in backticks in prose, like `{variable}`. For API integrations, update your endpoint to `https://api.example.com/v1/docs`.
+
+</Expandable>
